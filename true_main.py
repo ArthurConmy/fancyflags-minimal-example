@@ -12,7 +12,7 @@ def main(
     argv, # Need to pass argv even though it's unused
     my_dict: dict | None = None,
 ):
-    my_dict = my_dict or _MY_DICT.value  # `.value` returns a dict
+    my_dict = my_dict if my_dict is not None else _MY_DICT.value  # `.value` returns a dict
     print(f"{my_dict=}")
 
 if __name__ == "__main__":
